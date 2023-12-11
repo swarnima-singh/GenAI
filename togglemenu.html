@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function showHideDiv(ele) {
+            var srcElement = document.getElementById(ele);
+            if (srcElement != null) {
+                if (srcElement.style.display == "block") {
+                    srcElement.style.display = 'none';
+                }
+                else {
+                    srcElement.style.display = 'block';
+                }
+                return false;
+            }
+        }
+
+        function showHideDiv1(ele) {
+            var srcElement = document.getElementById(ele);
+            if (srcElement != null) {
+                if (srcElement.style.display == "block") {
+                    srcElement.style.display = 'none';
+                }
+                else {
+                    srcElement.style.display = 'block';
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="button" value="Show/Hide" onClick="showHideDiv('divMsg')" /><br><br>
+        <input type="button" value="Show/Hide" onClick="showHideDiv1('divMsg1')" /><br><br>
+        <div id="divMsg"
+            style="background-color: #006969; color: #ffffff; height: 200px; width: 200px; text-align: center; display:none">
+            <b>Hello friends, <br>How are you?</b>
+        </div>
+
+        <div id="divMsg1"
+            style="background-color: #445677; color: #ffffff; height: 200px; width: 200px; text-align: center; display:none">
+            <b>2 tabs friends, <br>How are you?</b>
+        </div>
+    </div>
+</body>
+
+</html>
