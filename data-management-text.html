@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GenAI Dashboard</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../../css/vertical-layout-light/custom.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/GenAI.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="bg-primary navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+
+            <div class="bg-primary navbar-menu-wrapper d-flex align-items-center justify-content-between">
+                <div
+                    class="bg-primary text-center navbar-brand-wrapper d-flex align-items-center justify-content-between">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-toggle="minimize">
+                        <span class="icon-menu text-white"></span>
+                    </button>
+                    <a class="navbar-brand brand-logo mr-5 d-flex justify-content-center align-items-center"
+                        href="index.html"><img src="images/GenAI-light.png" class="mr-2" alt="logo" /><span
+                            class="logo-title-dashbd text-white">GenAI</span></a>
+                    <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/GenAI-light.png" alt="logo" /></a> -->
+                </div>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search text-white"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control text-white" id="navbar-search-input"
+                                placeholder="Search now" aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="icon-bell mx-0 text-white"></i>
+                            <span class="count">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="ti-info-alt mx-0 text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-warning text-white">
+                                        <i class="ti-settings mx-0 text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Settings</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Private message
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-info">
+                                        <i class="ti-user mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        2 days ago
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <i class="ti-user mx-0 text-white"></i> <span class="text-white">Jhon Doe</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item nav-settings d-none d-lg-flex">
+            <a class="nav-link" href="#">
+              <i class="icon-ellipsis"></i>
+            </a>
+          </li> -->
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="icon-menu text-white"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas bg-dark" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Data Management</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="Data-management.html">Submenu
+                                        1</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="local-data-management.html">Local Data
+                                        Management</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="">External Data Management</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+                            aria-controls="form-elements">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">Business Case</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-elements">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Submenu
+                                        1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false"
+                            aria-controls="charts">
+                            <i class="icon-bar-graph menu-icon"></i>
+                            <span class="menu-title">Configuration</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">Submenu 1</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false"
+                            aria-controls="tables">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">Admin Management</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Submenu
+                                        1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false"
+                            aria-controls="icons">
+                            <i class="icon-contract menu-icon"></i>
+                            <span class="menu-title">Reports</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="icons">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Submenu 1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false"
+                            aria-controls="auth">
+                            <i class="icon-head menu-icon"></i>
+                            <span class="menu-title">User Pages</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Submenu 1
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Submenu 2
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false"
+                            aria-controls="error">
+                            <i class="icon-ban menu-icon"></i>
+                            <span class="menu-title">Error pages</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="error">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Submenu 1
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Submenu 2
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper pt-4">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h3 class="fw-bold">Data Management</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                                        </div>
+                                        <div class="">
+                                            <a href="" class="crt-foldr-tbn" data-toggle="modal"
+                                                data-target="#exampleModal"><i class="mdi mdi-plus"></i> Create
+                                                Folder</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bg-white ">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div class="contentscrollscustom">
+                                                    <div class="scrollable-content">
+                                                        <p>No Folder added. <a href="">Please Create Folder.</a></p>
+
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laudantium ut aspernatur atque qui est excepturi recusandae, vero perferendis modi nam totam unde numquam, delectus voluptates, placeat deleniti tenetur eius ipsum fuga corporis ipsa consequatur nobis necessitatibus. Aspernatur optio vero ab officia possimus eius sapiente similique, cupiditate dicta est et iusto labore libero, voluptates atque odit dolores saepe, dignissimos ad quibusdam. Quasi debitis, atque aspernatur asperiores mollitia dolorem voluptas odit voluptatibus ipsa nobis placeat nemo tempora facere veniam suscipit minima quod corrupti molestias tenetur corporis perspiciatis cumque ullam eaque provident! Facere eos eligendi libero laudantium reiciendis numquam aliquam magni nesciunt consectetur quia accusantium nobis, consequuntur hic dolore ab blanditiis illo. Tempore natus beatae soluta incidunt aliquid alias inventore, molestias nihil nemo ut doloribus ducimus, maxime, omnis ea expedita voluptatem? Quae ullam quod, dicta veritatis dolore culpa assumenda ex soluta blanditiis optio esse ratione provident sint eveniet quidem officiis incidunt officia voluptatibus aut deleniti quo tempore error illo? Voluptatibus itaque architecto dolore, dolorum sed laudantium, placeat impedit iste hic ea, numquam dolorem repudiandae. Natus sint tenetur doloremque iste rerum laboriosam nihil officia blanditiis iure, totam consequatur debitis deserunt sequi veniam voluptatibus placeat pariatur ratione. Soluta adipisci incidunt error, odit fugiat ipsum? Illo eligendi nostrum, officiis numquam ea necessitatibus sint, quibusdam corporis beatae ullam accusantium, debitis magni ducimus repellendus ut architecto. Tempore nisi aut non delectus dolore quibusdam deleniti facere tempora enim? Laborum natus beatae quas necessitatibus consequuntur voluptatibus esse provident a dolorem vero molestiae ipsa omnis labore ipsum, eveniet amet alias, ab blanditiis? Ea, enim? Suscipit, veniam expedita quis earum ea quo. Quam nulla eveniet quis optio facere ipsam necessitatibus nam quaerat alias cumque, doloremque modi soluta labore hic et eos amet atque nesciunt, aut deserunt veritatis excepturi expedita distinctio molestiae. Minus dolor explicabo suscipit aperiam saepe dicta autem vitae accusamus perferendis eligendi repellat quam minima velit ex, dolorum voluptas mollitia nesciunt incidunt enim iste commodi cupiditate nemo nam? Quam, beatae rem unde explicabo excepturi molestias suscipit nesciunt, ab perspiciatis quidem, reprehenderit quae vero. Fugiat, provident explicabo quaerat optio et unde dolorem cum magnam aspernatur, neque voluptatum sapiente repellat nesciunt distinctio accusantium incidunt facilis dolor nobis recusandae odit exercitationem ea possimus! Quisquam illum eos doloremque quas tempore, ipsa consequuntur quidem architecto facere voluptatum dolorum maxime magnam atque cumque minus nesciunt repellat et nostrum aut similique perspiciatis in harum quos? Sed nisi atque tempora possimus explicabo aspernatur impedit, asperiores facilis facere quia soluta aliquid eum quam maxime est. Quibusdam quae quos voluptatibus eveniet pariatur doloribus beatae totam et vero alias ut obcaecati eaque, nobis distinctio iste itaque ex repellendus fugit. Pariatur totam mollitia ab voluptate quibusdam ut voluptates consequuntur non error quam, ratione modi porro accusamus dignissimos! Ea praesentium eius aliquid nemo maiores quidem, voluptatibus saepe harum consectetur illo alias quibusdam beatae porro totam nihil tenetur atque? Omnis, assumenda! Consequatur obcaecati eveniet soluta ipsa explicabo in asperiores suscipit voluptas, adipisci, magnam nihil quisquam quas voluptates totam vero aliquam, tempore dolore aspernatur minus cumque provident incidunt? Esse aspernatur minima incidunt obcaecati pariatur quos.</p>
+                                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim ad aut reprehenderit iure laudantium eos commodi, natus iusto totam dolorum hic! Quisquam distinctio optio tempore ut delectus recusandae amet inventore labore reiciendis totam ea numquam laudantium ab officiis corporis nemo nisi odit, consequuntur neque et at! Eius laboriosam dolorum nulla, soluta provident dicta eum sit necessitatibus ducimus similique numquam ipsum iste et totam voluptatum alias earum! Quod voluptatibus perspiciatis vero iusto exercitationem enim fugit, at rem dolores vitae eum aliquid neque alias libero, nulla quae earum consequatur laudantium? Ab eligendi molestias sed itaque, consequatur dolores, omnis inventore ut iure totam excepturi illo, quia voluptatem quibusdam eum natus vitae suscipit ipsa. Vero modi nihil a quibusdam ratione reiciendis pariatur tempore officia perferendis doloribus obcaecati aspernatur, beatae maxime exercitationem fugit dolorem officiis eligendi veniam temporibus. Repellat itaque, quasi doloremque eveniet rerum ex facilis animi, quibusdam ad asperiores, explicabo dolorem! Ut, ullam explicabo, accusamus adipisci quod earum sunt animi provident ratione ducimus perspiciatis blanditiis dicta. Assumenda inventore aliquam provident quas saepe! Nam dolor earum sed, perferendis aliquam a ipsam aperiam. Similique quasi possimus consectetur doloremque rem eveniet nostrum, eius tempore eum dolore accusantium ab modi. Harum soluta iste aliquam dolores reprehenderit ratione? Earum natus explicabo at! Error, ab dignissimos? Iure ad repellat laborum omnis, quas commodi dolore earum minus placeat itaque tenetur, dignissimos, doloremque vitae consequuntur voluptatibus eaque aliquam alias expedita! Sunt repudiandae, quisquam provident ipsum expedita quidem, perspiciatis facilis ut illum debitis porro dolorem vitae! Minima fugit fuga itaque maxime est consectetur molestias perspiciatis saepe ad alias, quod illum. Velit esse doloribus quia vero, nobis natus quam eaque laboriosam quidem nihil alias ratione corporis impedit aperiam dolores debitis magnam consequuntur? Maiores eveniet laboriosam veniam tenetur exercitationem corporis laudantium rerum ullam facere, aliquid tempora est dicta voluptate reprehenderit tempore commodi optio. Inventore eaque reiciendis voluptatem? Dolore illum accusamus error eos repellendus qui ad voluptatem velit corrupti soluta molestiae debitis at autem dolor voluptatibus optio, inventore commodi. Ipsam facilis velit iure doloribus ratione repellendus consectetur error blanditiis labore optio, nobis praesentium rerum voluptas nihil dolores atque architecto iste odit voluptatem saepe, iusto magni! Itaque, asperiores magni. Labore eaque itaque blanditiis ullam doloribus possimus dignissimos eius. Quam impedit optio minus sint, officia explicabo reiciendis numquam. Aliquid asperiores maxime adipisci in assumenda id itaque iusto accusamus ab nihil corrupti nobis, quibusdam voluptatum impedit neque dolorem unde maiores, incidunt placeat voluptas pariatur sunt aut! Consequuntur iure ipsam aperiam sapiente ipsum velit nostrum fugit ducimus laboriosam, dicta natus unde id quam non in tempore impedit quaerat eius? Et, tenetur temporibus. Quia, magni incidunt. Possimus voluptas doloremque adipisci, quidem, est non minus quasi illum animi aliquid dolorem sapiente soluta odit amet impedit ut ratione magni tenetur pariatur inventore ipsam! Magni rem illo eveniet necessitatibus? Ab similique sit, fuga necessitatibus omnis dicta architecto consequuntur repudiandae odit, dolorum eveniet, a vel officia labore. Praesentium odio ex quia dolor, nemo maiores adipisci esse accusamus quaerat sunt vel? Inventore aperiam voluptatum obcaecati quae qui! Commodi excepturi praesentium, recusandae deserunt architecto aperiam velit laborum.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit molestiae eligendi fuga dignissimos laborum cupiditate delectus, saepe doloribus nesciunt non, vel nihil debitis consectetur eos! Dolore voluptas minus repellendus animi. Dolores necessitatibus at quis cumque nesciunt et assumenda in quidem tempora porro, voluptates sed vel nihil architecto atque voluptatibus ipsam nisi totam ipsum odio dignissimos temporibus quae nemo commodi. Beatae fugiat quod quisquam labore eos necessitatibus ducimus sed? Impedit qui ducimus enim autem eos nobis pariatur, mollitia eius ipsam dolorum deleniti nihil error harum quos a quibusdam dolores, beatae, labore quasi quis dolorem nam reiciendis unde corporis? Debitis qui rerum modi animi magni unde optio ratione alias tenetur maiores dignissimos, esse dolor, nam quam! Error ipsum quia iure ex dignissimos quam molestiae vitae libero! A excepturi laborum nam vitae animi ex incidunt enim sed doloremque debitis blanditiis illo cupiditate veritatis maxime officia aliquam amet obcaecati alias ab, accusamus nesciunt fugiat iusto! Perferendis beatae ipsam aperiam fugiat, impedit cum maiores, ea blanditiis eos eveniet quas corrupti. Error mollitia laborum ipsum temporibus cumque aut tenetur iste autem voluptate nobis accusamus facere at, est soluta, eaque quis praesentium, similique eveniet omnis non dolores? Est sapiente tempore quos doloremque magni non labore sed molestiae, commodi ab id minus debitis aliquid. Aut, quasi! Eius, magnam aut veniam ratione ex quaerat distinctio odio cumque cupiditate ad perferendis, fugit reiciendis sequi tenetur quo. Eligendi maxime pariatur iste repellat. Cumque beatae similique sequi officiis modi, provident laborum sed qui. Rerum atque ea quis similique eos maiores! Tempora quo vel ad reprehenderit possimus dolor praesentium necessitatibus magni nostrum perspiciatis soluta asperiores hic, esse distinctio minus minima doloremque odio velit! Voluptates dolorum amet, aliquam deleniti praesentium esse. Molestias incidunt tempore nobis at alias quibusdam dicta laudantium, provident aliquid! Inventore enim veniam commodi accusantium fugit incidunt fugiat laboriosam porro error laudantium.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023.
+                            GenAI
+                            All rights reserved.</span>
+
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+
+
+
+
+
+
+        <!-- Modal Create Folder -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a folder</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form class="forms-sample">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Name</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                                placeholder="Enter folder name (eg. Java Developer/Network Engineer)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Category</label>
+                                            <div class="d-flex justify-content-start align-items-center">
+                                                <div class="form-check mr-4">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input"
+                                                            name="membershipRadios" id="membershipRadios1" value=""
+                                                            checked>
+                                                        Resume Analytic
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input"
+                                                            name="membershipRadios" id="membershipRadios2"
+                                                            value="option2">
+                                                        Legal Analytic
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Description</label>
+                                            <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Create Folder end here -->
+
+
+
+
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+</body>
+
+
+
+
+</html>

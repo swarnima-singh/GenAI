@@ -8724,7 +8724,7 @@ body {
   text-align: left;
   background-color: #fff;
   height: 100svh;
-  /* overflow: hidden; */
+  /* overflow-y: hidden; */
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -11047,7 +11047,7 @@ textarea.is-invalid.tt-hint {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.475rem 2.4rem;
+  padding: 0.475rem 1.4rem;
   font-size: 0.875rem;
   line-height: 1;
   border-radius: 0.1875rem;
@@ -22430,7 +22430,7 @@ code {
 .form-check .form-check-label {
   min-height: 18px;
   display: block;
-  margin-left: 1.75rem;
+  margin-left: .45rem;
   font-size: 0.875rem;
   line-height: 1.5;
 }
@@ -23886,7 +23886,7 @@ dl li {
 }
 
 .modal .modal-dialog .modal-content .modal-body {
-  padding: 26px 26px;
+  padding: 20px 20px;
 }
 
 .modal .modal-dialog .modal-content .modal-footer {
@@ -29139,7 +29139,7 @@ div.tagsinput span.tag a {
   margin-top: 0;
   right: 0;
   left: auto;
-  top: 70px;
+  top: 45px;
 }
 
 .rtl .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
